@@ -1,0 +1,29 @@
+<?php
+	$cats = Mage::getModel('catalog/category')->load(2)->getChildren();
+	$catIds = explode(',',$cats);
+?>
+<ul>
+<?php foreach($catIds as $catId):?>
+	<li>
+		<?php
+			$category = Mage::getModel('catalog/category')->load($catId);
+			echo $category->getName();
+			
+			$subCats = Mage::getModel('catalog/category')->load($category->getId())->getChildren();
+			$subCatIds = explode(',',$subCats);
+		?>
+			<?php if(count($subCatIds)>1): ?>
+			<ul>
+			<?php foreach($subCatIds as $subCat) : ?>
+				<li>
+				<?php 
+					$subCategory = Mage::getModel('catalog/category')->load($subCat);
+					echo $subCategory->getName();
+				?>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+			<?php endif; ?>
+	</li>
+<?php endforeach; ?>
+</ul>

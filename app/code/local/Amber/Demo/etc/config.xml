@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<config>
+	<global>
+
+		<models>
+			<demo>
+				<class>Amber_Demo_Model</class>
+			</demo>
+		</models>
+
+		<blocks>
+			<demo>
+				<class>Amber_Demo_Block</class>
+			</demo>
+		</blocks>
+
+		<helpers>
+			<demo>
+				<class>Amber_Demo_Helper</class>
+			</demo>
+		</helpers>
+
+		<events>
+			<customer_login>
+				<observers>
+					<demo>
+						<type>model</type>
+						<class>demo/observer</class>
+						<method>logCustomer</method>
+					</demo>
+				</observers>
+			</customer_login>
+		</events>
+
+	</global>
+</config>

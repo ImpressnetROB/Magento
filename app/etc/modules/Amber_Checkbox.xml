@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+		<Amber_Checkbox>
+		<active>true</active>
+		<codePool>local</codePool>
+		</Amber_Checkbox>
+	</modules>
+</config>

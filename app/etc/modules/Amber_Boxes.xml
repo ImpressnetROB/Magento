@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+		<Amber_Boxes>
+		<active>true</active>
+		<codePool>local</codePool>
+		</Amber_Boxes>
+	</modules>
+</config>

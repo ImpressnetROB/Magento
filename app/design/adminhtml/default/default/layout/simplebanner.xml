@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <simplebanner_adminhtml_simplebanner_index>
+        <reference name="content">
+            <block type="simplebanner/adminhtml_simplebanner" name="simplebanner" />
+        </reference>
+    </simplebanner_adminhtml_simplebanner_index>
+</layout>

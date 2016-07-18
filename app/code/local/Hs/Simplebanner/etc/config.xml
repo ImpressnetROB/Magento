@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Hs
+ * @package    Hs_Simplebanner
+ */
+ -->
+<config>
+    <modules>
+        <Hs_Simplebanner>
+            <version>0.1.0</version>
+        </Hs_Simplebanner>
+    </modules>
+    <frontend>
+        <routers>
+            <simplebanner>
+                <use>standard</use>
+                <args>
+                    <module>Hs_Simplebanner</module>
+                    <frontName>simplebanner</frontName>
+                </args>
+            </simplebanner>
+        </routers>
+        <layout>
+            <updates>
+                <simplebanner>
+                    <file>simplebanner.xml</file>
+                </simplebanner>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+            <simplebanner>
+                <use>admin</use>
+                <args>
+                    <module>Hs_Simplebanner</module>
+                    <frontName>simplebanner</frontName>
+                </args>
+            </simplebanner>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <simplebanner module="simplebanner">
+                <title>Simplebanner</title>
+                <sort_order>71</sort_order>               
+                <children>
+                    <items module="simplebanner">
+                        <title>Manage Banner</title>
+                        <sort_order>0</sort_order>
+                        <action>simplebanner/adminhtml_simplebanner</action>
+                    </items>
+                </children>
+            </simplebanner>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <Hs_Simplebanner>
+                            <title>Simplebanner Module</title>
+                            <sort_order>10</sort_order>
+                        </Hs_Simplebanner>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <simplebanner>
+                    <file>simplebanner.xml</file>
+                </simplebanner>
+            </updates>
+        </layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <simplebanner>
+                <class>Hs_Simplebanner_Model</class>
+                <resourceModel>simplebanner_mysql4</resourceModel>
+            </simplebanner>
+            <simplebanner_mysql4>
+                <class>Hs_Simplebanner_Model_Mysql4</class>
+                <entities>
+                    <simplebanner>
+                        <table>simplebanner</table>
+                    </simplebanner>
+                </entities>
+            </simplebanner_mysql4>
+        </models>
+        <resources>
+            <simplebanner_setup>
+                <setup>
+                    <module>Hs_Simplebanner</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </simplebanner_setup>
+            <simplebanner_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </simplebanner_write>
+            <simplebanner_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </simplebanner_read>
+        </resources>
+        <blocks>
+            <simplebanner>
+                <class>Hs_Simplebanner_Block</class>
+            </simplebanner>
+        </blocks>
+        <helpers>
+            <simplebanner>
+                <class>Hs_Simplebanner_Helper</class>
+            </simplebanner>
+        </helpers>
+    </global>
+</config>

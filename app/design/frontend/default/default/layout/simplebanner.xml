@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+   <layout version="0.1.0">
+       <simplebanner_index_index>
+           <reference name="root">
+               <action method="setTemplate"><template>page/1column.phtml</template></action>
+               <action method="setHeaderTitle" translate="title" module="simplebanner"><title>Simplebanner</title></action>
+           </reference>
+           <reference name="head">
+               <action method="setTitle" translate="title" module="simplebanner"><title>Simple Banner</title></action>
+               <action method="addJs"><script>bootstrap/jquery-1.10.2.min.js</script></action>
+               <action method="addJs"><script>bootstrap/jQuery.noConflict.js</script></action>
+               <action method="addJs"><script>bootstrap/bootstrap.js</script></action>
+               <action method="addJs"><script>bootstrap/jquery.bxslider.js</script></action>
+               <action method="addJs"><script>bootstrap/jquery.bxslider.min.js</script></action>
+           </reference>
+           <reference name="content">
+               <block type="simplebanner/simplebanner" name="simplebanner" template="simplebanner/simplebanner.phtml" />
+           </reference>
+       </simplebanner_index_index>
+   </layout> 

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<MasteringMagento_Example>
+        		<version>1.0.0</version>
+        	</MasteringMagento_Example>
+	</modules>
+<global>
+
+	<models>
+		<example>
+			<class>MasteringMagent_Example_Model</class>
+		</example>
+	</models>
+
+	<helpers>
+		<example>
+			<class>MasteringMagent_Example_Helper</class>
+		</example>
+	</helpers>
+
+	<blocks>
+		<example>
+			<class>MasteringMagent_Example_Block</class>
+		</example>
+	</blocks>
+
+
+</global>
+<frontend>
+	<routers>
+		<updates>
+			<example>
+				<use>
+				<args>
+					<frontName>
+					<module>MasteringMagento_Example</module>
+					</frontName>
+				</args>
+				</use>
+			</example>
+		</updates>
+	</routers>
+
+	<layout>
+		<updates>
+			<example>
+				<file>example.xml</file>
+			</example>
+		</updates>
+	</layout>
+</frontend>
+</config>

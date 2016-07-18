@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<!-- 
+
+/*
+ * @category	Amber
+ * @package		Amber_Checkbox
+ * @author		AMBeR®
+ * @date        12-07-2016
+ * @last edit   12-07-2016
+ * @copyright	Copyright 2016 AMBeR©
+ */
+
+ -->
+<config>
+	<modules>
+		<Amber_Checkbox>
+			<version>0.0.0.0.1</version>
+		</Amber_Checkbox>
+	</modules>
+
+<admin>
+	<routers>
+		<adminhtml>
+			<args>
+				<modules>
+					<checkbox before="Mage_Adminhtml">Amber_Checkbox_Adminhtml</checkbox>
+				</modules>
+			</args>
+		</adminhtml>
+	</routers>
+</admin>	
+<!-- FRONTEND -->
+	<frontend>
+
+<!-- ROUTERS -->
+		<routers>
+			<checkbox>
+				<use>standard</use>
+				<args>
+					<frontName>checkbox</frontName>
+					<module>Amber_Checkbox</module>
+				</args>
+			</checkbox>
+		</routers>
+		
+<!-- LAYOUT -->
+		<layout>
+			<updates>
+				<checkbox>
+					<file>checkbox.xml</file>
+				</checkbox>				
+			</updates>
+		</layout>
+	</frontend>
+
+<!-- GLOBAL -->		
+	<global>
+
+<!-- MODELS -->
+		<models>
+			<checkbox>
+				<class>Amber_Checkbox_Model</class>
+				<resourceModel>checkbox_resource</resourceModel>
+			</checkbox>
+			<checkbox_resource>
+				<class>Amber_Checkbox_Model_Resource</class>
+					<entities>
+						<event>
+							<table>checkbox_event</table>
+						</event>
+						<event_registrant>
+							<table>checkbox_event_registrant</table>
+						</event_registrant>
+					</entities>
+			</checkbox_resource>
+		</models>
+<!-- RESOURCES -->
+		<resources>
+			<checkbox_setup>
+				<setup>
+					<module>Amber_Checkbox</module>
+					<class>Mage_Core_Model_Resource_Setup</class>
+				</setup>
+			</checkbox_setup>
+		</resources>
+		
+		
+<!-- BLOCKS -->
+		<blocks>
+			<checkbox>
+				<class>Amber_Checkbox_Block</class>
+			</checkbox>
+		</blocks>
+
+<!-- HELPERS -->
+		<helpers>
+			<checkbox>
+				<class>Amber_Checkbox_Helper</class>
+			</checkbox>
+		</helpers>
+
+<!-- EVENTS -->
+		<events>
+			<customer_login>
+				<observers>
+					<checkbox>
+						<type>model</type>
+						<class>Amber_Checkbox_Model_Observer</class>
+						<method>logCustomer</method>
+					</checkbox>
+				</observers>
+			</customer_login>
+			
+			<controller_action_predispatch>
+				<observers>
+					<checkbox_observer>
+						<class>checkbox/observer</class>
+						<method>controllerActionPredispatch</method>
+					</checkbox_observer>
+				</observers>
+			</controller_action_predispatch>
+		</events>
+	</global>
+</config>

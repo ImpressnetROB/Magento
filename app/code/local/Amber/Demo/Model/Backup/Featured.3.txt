@@ -1,0 +1,26 @@
+<?php
+class Amber_Demo_Model_Featured extends Mage_Catalog_Model_Abstract {
+	//Featured products
+	public function showFeatured($id)
+	{
+		$category = Mage::getModel('catalog/category')->load($id);
+		$cat_name = $category->getName();
+		$collection = Mage::getResourceModel('catalog/product_collection')->addAttributeToSelect(array('name', 'description', 'image', 'price', 'category',))->addCategoryFilter($category);
+		$a = 0;
+		$prod .= "<h1>".$cat_name."</h1>";
+		foreach ($collection as $item) {
+			$cat_ids = $item->getId();
+			$prod .= "<ul class='imgs'>";
+			$prod .= "<li>Name:" . $item->getName()."</li>";
+			$prod .= "<li><div class='image'><img src='../media/catalog/product" . $item->getImage() . "'></div></li>";
+			$prod .= "<li align='right'><strong>Price:" . $item->getPrice()."</strong></li>";
+			$prod .= "</ul>";
+			$a = $a + 1;
+			if($a == 1){
+			//return $prod;
+			}
+		}
+		//return;
+}
+}
+?>

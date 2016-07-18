@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+		<MagentoMastering_Example>
+		<active>true</active>
+		<codePool>local</codePool>
+		</MagentoMastering_Example>
+	</modules>
+</config>

@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<!-- 
+
+/*
+ * @category	EDPA
+ * @package		EDPA_Browse
+ * @author		EDPA
+ * @date        17-09-2015
+ * @last edit   21-09-2015
+ * @copyright	Copyright 2015 EDPA
+ */
+
+ -->
+<config>
+	<modules>
+		<Amber_Boxes>
+			<version>0.0.0.0.1</version>
+		</Amber_Boxes>
+	</modules>
+
+<!-- FRONTEND -->
+	<frontend>
+<!-- ROUTERS -->
+		<routers>
+			<boxes>
+				<use>standard</use>
+				<args>
+					<module>Amber_Boxes</module>
+					<frontName>boxes</frontName>
+				</args>
+			</boxes>
+		</routers>
+<!-- LAYOUT -->
+		<layout>
+			<updates>
+				<boxes>
+					<file>amber_boxes.xml</file>
+				</boxes>				
+			</updates>
+		</layout>
+	</frontend>
+
+<!-- GLOBAL -->		
+	<global>
+
+<!-- MODELS -->
+		<models>
+			<boxes>
+				<class>Amber_Boxes_Model</class>
+			</boxes>
+		</models>
+
+<!-- BLOCKS -->
+		<blocks>
+			<boxes>
+				<class>Amber_Boxes_Block</class>
+			</boxes>
+		</blocks>
+
+<!-- HELPERS -->
+		<helpers>
+			<boxes>
+				<class>Amber_Boxes_Helper</class>
+			</boxes>
+		</helpers>
+
+<!-- EVENTS -->
+		<events>
+			
+			<controller_front_init_routers>
+				<observers>
+					<browse>
+						<class>Amber_Boxes_Controller_Router</class>
+						<method>initControllerRouters</method>
+					</browse>
+				</observers>
+			</controller_front_init_routers>
+			
+					
+			<customer_login>
+				<observers>
+					<boxes>
+						<type>model</type>
+						<class>Amber_Boxes_Model_Observer</class>
+						<method>logCustomer</method>
+					</boxes>
+				</observers>
+			</customer_login>
+		</events>
+
+	</global>
+</config>

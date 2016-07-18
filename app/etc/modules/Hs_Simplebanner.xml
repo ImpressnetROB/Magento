@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * @category   Hs
+ * @package    Hs_Simplebanner
+ */
+ -->
+<config>
+    <modules>
+        <Hs_Simplebanner>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Hs_Simplebanner>
+    </modules>
+</config> 
